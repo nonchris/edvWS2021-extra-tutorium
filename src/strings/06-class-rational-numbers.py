@@ -1,6 +1,8 @@
 # a basic example class to give an idea of how classes work
 # the basic examples are with cars or persons
 # I'd like to show of a rather advanced 'useful' example
+# Please not that this example does NOT cover any edge cases or typechecking
+# it is just meant as a basic visualization of a class
 
 import numpy as np
 
@@ -11,7 +13,9 @@ class RationalNumber:
         __init()__ is the standard function every class needs to be functional
         here's that basic stuff like preparing needed data
         init() can also call other class functions
+        Whole construct fails when input is e.g. a string - have a look at try / catch to fix it :)
         """
+
         # counter and denominator must be integers
         self.numerator = numerator
         self.denominator = denominator
@@ -87,6 +91,8 @@ if __name__ == "__main__":
     print("Second number:", number2_as_string)
 
     # we can also modify values inside a class
+    # note that we changed the denominators value but not self.value!
+    # maybe try to implement a set_denominator() function fixing that issue
     rational_number.denominator = 42
     print("Modified first number:", rational_number)
 
